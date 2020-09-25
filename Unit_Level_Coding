@@ -1,0 +1,70 @@
+/* Teacher Ed Undergraduate Exit Unit Table 2020 */
+INSERT INTO UnitLevel.dbo.S2195_U1
+                         (ProdYear, CustID, AcctNo, UnitID, SurvID, ProdID, LevelID, Name, ParentID)
+SELECT DISTINCT '2020' AS ProdYear, ws.CustID, ws.AcctNo, bs.UnitID, 2195 AS SurvID, '0111' AS ProdID, bs.LevelID, bs.Name, NULL AS ParentID
+FROM            UnitLevel.dbo.S2076_U1  AS bs
+LEFT OUTER JOIN WessResponses.dbo.S2195 AS ws ON '2020' = ws.ProdYear AND 2195 = ws.SurvID
+
+/*Business FullTime Exit Unit Table 2020 */
+INSERT INTO UnitLevel.dbo.S2187_U1
+                         (ProdYear, CustID, AcctNo, UnitID, SurvID, ProdID, LevelID, Name, ParentID)
+SELECT DISTINCT '2020' AS ProdYear, ws.CustID, ws.AcctNo, bs.UnitID, 2187 AS SurvID, '0001' AS ProdID, bs.LevelID, bs.Name, NULL AS ParentID
+FROM            UnitLevel.dbo.S2071_U1  AS bs
+LEFT OUTER JOIN WessResponses.dbo.S2187 AS ws ON '2020' = ws.ProdYear AND 2187 = ws.SurvID
+
+/*Undergrad Business Alumni Assessment Unit Tables ----- DID NOT WORK -- no tables*/
+ INSERT INTO UnitLevel.dbo.S2197_U1
+                         (ProdYear, CustID, AcctNo, UnitID, SurvID, ProdID, LevelID, Name, ParentID)
+SELECT DISTINCT '2020' AS ProdYear, ws.CustID, ws.AcctNo, bs.UnitID, 2197 AS SurvID, '0016' AS ProdID, bs.LevelID, bs.Name, NULL AS ParentID
+FROM            UnitLevel.dbo.S2078_U1  AS bs
+LEFT OUTER JOIN WessResponses.dbo.S2197 AS ws ON '2020' = ws.ProdYear AND 2197 = ws.SurvID
+
+INSERT INTO UnitLevel.dbo.S2197_U2
+                         (ProdYear, CustID, AcctNo, UnitID, SurvID, ProdID, LevelID, Name, ParentID)
+SELECT DISTINCT '2020' AS ProdYear, ws.CustID, ws.AcctNo, bs.UnitID, 2197 AS SurvID, '0016' AS ProdID, bs.LevelID, bs.Name, NULL AS ParentID
+FROM            UnitLevel.dbo.S2078_U2  AS bs
+LEFT OUTER JOIN WessResponses.dbo.S2197 AS ws ON '2020' = ws.ProdYear AND 2197 = ws.SurvID
+
+/*Alumni for Engineering Assessment Unit Tables  */
+
+ INSERT INTO UnitLevel.dbo.S2200_U1
+                         (ProdYear, CustID, AcctNo, UnitID, SurvID, ProdID, LevelID, Name, ParentID)
+SELECT DISTINCT '2020' AS ProdYear, ws.CustID, ws.AcctNo, bs.UnitID, 2200 AS SurvID, '0028' AS ProdID, bs.LevelID, bs.Name, NULL AS ParentID
+FROM            UnitLevel.dbo.S2082_U1  AS bs
+LEFT OUTER JOIN WessResponses.dbo.S2200 AS ws ON '2020' = ws.ProdYear AND 2200 = ws.SurvID
+
+INSERT INTO UnitLevel.dbo.S2200_U2
+                         (ProdYear, CustID, AcctNo, UnitID, SurvID, ProdID, LevelID, Name, ParentID)
+SELECT DISTINCT '2020' AS ProdYear, ws.CustID, ws.AcctNo, bs.UnitID, 2200 AS SurvID, '0028' AS ProdID, bs.LevelID, bs.Name, NULL AS ParentID
+FROM            UnitLevel.dbo.S2082_U2  AS bs
+LEFT OUTER JOIN WessResponses.dbo.S2200 AS ws ON '2020' = ws.ProdYear AND 2200 = ws.SurvID
+
+INSERT INTO UnitLevel.dbo.S2176_U1
+                         (ProdYear, CustID, AcctNo, UnitID, SurvID, ProdID, LevelID, Name, ParentID)
+SELECT DISTINCT '2020' AS ProdYear, ws.CustID, ws.AcctNo, bs.UnitID, 2176 AS SurvID, '0003' AS ProdID, bs.LevelID, bs.Name, NULL AS ParentID
+FROM            UnitLevel.dbo.S2073_U1  AS bs
+LEFT OUTER JOIN WessResponses.dbo.S2176 AS ws ON '2020' = ws.ProdYear AND 2176 = ws.SurvID
+
+/* Teacher ed ALUMNI */
+INSERT INTO UnitLevel.dbo.S2207_U1
+                         (ProdYear, CustID, AcctNo, UnitID, SurvID, ProdID, LevelID, Name, ParentID)
+SELECT DISTINCT '2020' AS ProdYear, ws.CustID, ws.AcctNo, bs.UnitID, 2207 AS SurvID, '0060' AS ProdID, bs.LevelID, bs.Name, NULL AS ParentID
+FROM            UnitLevel.dbo.S2090_U1  AS bs
+LEFT OUTER JOIN WessResponses.dbo.S2207 AS ws ON '2020' = ws.ProdYear AND 2207 = ws.SurvID
+
+/*ALUMNI UG Nursing */
+INSERT INTO UnitLevel.dbo.S2178_U1
+                         (ProdYear, CustID, AcctNo, UnitID, SurvID, ProdID, LevelID, Name, ParentID)
+SELECT DISTINCT '2020' AS ProdYear, ws.CustID, ws.AcctNo, bs.UnitID, 2178 AS SurvID, '0035' AS ProdID, bs.LevelID, bs.Name, NULL AS ParentID
+FROM            UnitLevel.dbo.S2083_U1  AS bs
+LEFT OUTER JOIN WessResponses.dbo.S2178 AS ws ON '2020' = ws.ProdYear AND 2178 = ws.SurvID
+
+/*undergrad Nursing Exit */
+
+
+  INSERT INTO UnitLevel.dbo.S2177_U1
+                         (ProdYear, CustID, AcctNo, UnitID, SurvID, ProdID, LevelID, Name, ParentID)
+SELECT DISTINCT '2020' AS ProdYear, ws.CustID, ws.AcctNo, bs.UnitID, 2177 AS SurvID, '0022' AS ProdID, bs.LevelID, bs.Name, NULL AS ParentID
+FROM            UnitLevel.dbo.S2081_U1  AS bs
+LEFT OUTER JOIN WessResponses.dbo.S2177 AS ws ON '2020' = ws.ProdYear AND 2177 = ws.SurvID
+ORDER BY ws.CustID, ws.AcctNo, bs.LevelID, bs.UnitID
